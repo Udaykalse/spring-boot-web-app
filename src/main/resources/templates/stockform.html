@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/savestock}" method="post" th:object="${stock}">
+  <label>enter stock id</label>
+  <input type="text" name="id" th:field="*{stockId}"><br>
+  <label>enter stock name</label>
+  <input type="text" name="name" th:field="*{stockName}"><br>
+
+  <label>enter stock purchase price</label>
+  <input type="text" name="purchase" th:field="*{purchaseCost}"><br>
+  <label>enter stock sell cost</label>
+  <input type="text" name="sell" th:field="*{sellCost}"><br>
+  <input type="submit" value="Add Stock">
+
+
+</form>
+</body>
+</html>

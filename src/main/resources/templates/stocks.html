@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Information</title>
+</head>
+<body>
+
+<h1>Stock Information</h1>
+<a href="showform"><button>add details</button></a>
+<table border="2">
+  <tr>
+    <th>STOCK ID</th>
+    <th>STOCK NAME</th>
+    <th>PURCHASE COST</th>
+    <th>SELL COST</th>
+    <th>MARGIN</th>
+  </tr>
+<!--  margin>0(condition)-->
+  <tr th:each="stock:${stocks}" th:style="${stock.purchaseCost<stock.sellCost?'background:green':'background:red'}">
+    <td th:text="${stock.stockId}"></td>
+    <td th:text="${stock.stockName}"></td>
+    <td th:text="${stock.purchaseCost}"></td>
+    <td th:text="${stock.sellCost}"></td>
+    <td th:text="${stock.sellCost-stock.purchaseCost}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
